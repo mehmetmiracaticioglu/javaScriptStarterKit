@@ -1,4 +1,5 @@
 import { BaseLogger, ElasticLogger, MongoLogger } from "../crossCuttingConcerns/logging/logger.js"
+import { users } from "../data/users.js"
 import User from "../models/user.js"
 import UserService from "../services/userService.js"
 
@@ -14,5 +15,14 @@ userService.add(user1)
 userService.add(user2)
 
 console.log(userService.list())
+
+console.log("---------------")
+
+userService.load(users)
+
+console.log(userService.customers)
+console.log(userService.employees)
+console.log(userService.errors)
+
 
 
