@@ -1,10 +1,13 @@
 export default class UserService{
-    constructor(){
+    constructor(loggerService){
         this.users=[]
+        this.loggerService=loggerService
     }
 
     add(user){
         this.users.push(user)
+        this.loggerService.log(user)
+        
     }
     list (){
         return this.users
